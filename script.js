@@ -2,6 +2,10 @@ let drinkTitle = document.getElementById("drink-name");
 let drinkInstructions = document.getElementById("card-text");
 let drinkIng1 = document.getElementById("ingredient1");
 let drinkIng2 = document.getElementById("ingredient2");
+let drinkIng3 = document.getElementById("ingredient3");
+let drinkIng4 = document.getElementById("ingredient4");
+let drinkIng5 = document.getElementById("ingredient5");
+let drinkIng6 = document.getElementById("ingredient6");
 let genDrinkBtn = document.getElementById("button");
 
 function getApi() {
@@ -19,17 +23,20 @@ function getApi() {
       console.log(data);
       console.log(data.drinks[0].strDrink);
       drinkTitle.textContent = data.drinks[0].strDrink;
-      // displayDrinkRecipe();
+      drinkInstructions.textContent = data.drinks[0].strInstructions;
+      drinkIng1.textContent =
+        data.drinks[0].strMeasure1 + data.drinks[0].strIngredient1;
+      drinkIng2.textContent =
+        data.drinks[0].strMeasure2 + data.drinks[0].strIngredient2;
+      drinkIng3.textContent =
+        data.drinks[0].strMeasure3 + data.drinks[0].strIngredient3;
+      drinkIng4.textContent =
+        data.drinks[0].strMeasure4 + data.drinks[0].strIngredient4;
+      drinkIng5.textContent =
+        data.drinks[0].strMeasure5 + data.drinks[0].strIngredient5;
+      drinkIng6.textContent =
+        data.drinks[0].strMeasure6 + data.drinks[0].strIngredient6;
     });
-
-  // function displayDrinkRecipe(data) {
-  //   let recipe = data;
-  //   let drinks = data.drinks[0].strDrink;
-
-  //   if (recipe.drinks[0].strAlcoholic === "Alcoholic") {
-  //     drinkTitle.textContent = data.drinks[0].strDrink;
-  //   }
-  // }
 }
 
 genDrinkBtn.addEventListener("click", getApi);
