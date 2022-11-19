@@ -9,19 +9,25 @@ let drinkIng6 = document.getElementById("ingredient6");
 let genDrinkBtn = document.getElementById("button");
 
 function getApi() {
-  var requestOptions = {
-    method: "GET",
-    redirect: "follow",
-  };
+  //Url for drink randomizer
   var requestUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
+  //Calls the url
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
+    //Pulls the data from the cocktails DB
     .then(function (data) {
       console.log(data);
       console.log(data.drinks[0].strDrink);
+
+      //TO DO:
+      //1. Create a way to only show lines on webpage for ingredients that exist(ie some recipes only have 5 ingredients but there are lines for up to 16)
+      //2. Add more lines for up to 16 ingredients
+      //3. Swap instructions and ingredients on webpage with css/bootstrap
+
+      //Populates drink title, instructions and ingredients on webpage
       drinkTitle.textContent = data.drinks[0].strDrink;
       drinkInstructions.textContent = data.drinks[0].strInstructions;
       drinkIng1.textContent =
@@ -39,7 +45,11 @@ function getApi() {
     });
 }
 
+//Event listener for "generate drink" button
 genDrinkBtn.addEventListener("click", getApi);
+
+//TO DO:
+//1. Complete development of this api call
 
 //Denver liquor store url and beginning code - not completed
 // function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
