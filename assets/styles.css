@@ -1,21 +1,36 @@
+body {
+  background-image: url(./assets/photos/bar-back.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed, scroll;
+}
+
 h1 {
+  font-family: tangerine, sans-serif;
   color: #f1e5ac;
   text-shadow: 0 0 7px #e2d0ab, 0 0 10px #e2d0ab, 0 0 21px #e2d0ab,
     0 0 42px #e2d0ab, 0 0 82px #e2d0ab, 0 0 92px #e2d0ab, 0 0 102px #e2d0ab,
     0 0 151px #e2d0ab;
   letter-spacing: 3px;
 }
+#title-text{
+  font-family: calligraffitti, sans-serif;
+}
 
 h2 {
+  font-family: calligraffitti, sans-serif;
   font-size: 28pt;
   color: #281c1c;
   text-shadow: 0 0 5px #482029;
 }
 
 p {
+  font-family: nanum gothic, sans-serif;
   margin: 5px;
   color: #281c1c;
   font-weight: bolder;
+}
+.list-group{
+  font-family: calligraffitti, sans-serif;
 }
 
 .list-group-item {
@@ -44,5 +59,4 @@ p {
   margin: 5px;
   color: #fff;
 }
-
 
