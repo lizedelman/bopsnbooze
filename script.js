@@ -56,7 +56,7 @@ function getApi() {
     for (let i = 0; i < ingredients.length; i++) {
         let drinkIng1 = document.createElement("li");
         test.append(drinkIng1);
-        drinkIng1.textContent = ingredients[i]
+        drinkIng1.textContent = ingredients[i++]
         
     }
 
