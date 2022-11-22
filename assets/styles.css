@@ -1,29 +1,48 @@
-html {
-    background: url(images/bg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  h1 {
-    color: #fff; 
-    text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #e2d0ab,
-    0 0 82px #e2d0ab,
-    0 0 92px #e2d0ab,
-    0 0 102px #e2d0ab,
+h1 {
+  color: #f1e5ac;
+  text-shadow: 0 0 7px #e2d0ab, 0 0 10px #e2d0ab, 0 0 21px #e2d0ab,
+    0 0 42px #e2d0ab, 0 0 82px #e2d0ab, 0 0 92px #e2d0ab, 0 0 102px #e2d0ab,
     0 0 151px #e2d0ab;
-    letter-spacing: 3px;
-  }
+  letter-spacing: 3px;
+}
 
-  #title-text {
-    font-weight: 700;
-    color:#fff; 
-  }
+h2 {
+  font-size: 28pt;
+  color: #281c1c;
+  text-shadow: 0 0 5px #482029;
+}
 
+p {
+  margin: 5px;
+  color: #281c1c;
+  font-weight: bolder;
+}
+
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0);
+  color: #281c1c;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.btn {
+  background-image: linear-gradient(#dadbdd, #d3af37);
+  border-color: #cecece;
+}
+
+#title-text {
+  font-weight: 700;
+  color: #f1e5ac;
+}
+
+#drink-container {
+  background-color: #c04000dc;
+  border-radius: 15px;
+}
+
+#store-btn {
+  margin: 5px;
+  color: #fff;
+}
 
 
