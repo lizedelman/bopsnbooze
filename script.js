@@ -6,7 +6,7 @@ let drinkIng3 = document.getElementById("ingredient3");
 let drinkIng4 = document.getElementById("ingredient4");
 let drinkIng5 = document.getElementById("ingredient5");
 let drinkIng6 = document.getElementById("ingredient6");
-let genDrinkBtn = document.getElementById("button");
+let genDrinkBtn = document.getElementById("gen-button");
 
 function getApi() {
   //Url for drink randomizer
