@@ -1,13 +1,9 @@
 let drinkTitle = document.getElementById("drink-name");
 let drinkInstructions = document.getElementById("card-text");
 let drinkIng1 = document.getElementById("ingredient1");
-let drinkIng2 = document.getElementById("ingredient2");
-let drinkIng3 = document.getElementById("ingredient3");
-let drinkIng4 = document.getElementById("ingredient4");
-let drinkIng5 = document.getElementById("ingredient5");
-let drinkIng6 = document.getElementById("ingredient6");
 let listGroup = document.getElementById("list-group");
 let genDrinkBtn = document.getElementById("gen-button");
+let drinkImg = document.getElementById("drinkimg");
 
 function getApi() {
   //Url for drink randomizer
@@ -23,9 +19,11 @@ function getApi() {
       console.log(data);
       console.log(data.drinks[0].strDrink);
 
-      //Populates drink title, instructions and ingredients on webpage
+      //Populates drink title, instructions and image on webpage
       drinkTitle.textContent = data.drinks[0].strDrink;
       drinkInstructions.textContent = data.drinks[0].strInstructions;
+      //NOT WORKING:
+      drinkImg.src = data.drinks[0].strDrinkThumb;
 
       //Creates an array of all the ingredients and measurements
       var ingredients = [];
@@ -50,21 +48,20 @@ function getApi() {
 
         for (let i = 0; i < ingredients.length; i++) {
           if (i < ingredients.length) {
-            let drinkIng1 = document.createElement("li");
-            listGroup.append(drinkIng1);
-            drinkIng1.textContent =
-              ingredientObject.measure + " " + ingredientObject.ingredient;
-          } else {
-            drinkIng1 = "";
-          }
+            let drinkIngredients = document.createElement("li");
+            listGroup.append(drinkIngredients);
 
-          //   console.log(ingredients[i++]);
+            drinkIngredients.textContent = ingredients[i++].ingredient;
+
+            // drinkIngredients.textContent =
+            //   ingredientObject.measure + " " + ingredientObject.ingredient;
+          } else {
+            break;
+          }
 
           // //create the li element and append it
           //   let drinkIng1 = document.createElement("li");
           //   listGroup.append(drinkIng1);
-
-          //This line will display the ingredients but I it's not working right
           // drinkIng1.textContent =
           //   ingredientObject.measure + " " + ingredientObject.ingredient;
         }
