@@ -1,15 +1,17 @@
 body {
-  background-image: url(./assets/photos/bar-back.jpeg);
+  background-image: url(./photos/bar-back.jpeg);
   background-repeat: no-repeat;
   background-attachment: fixed, scroll;
+  background-size: cover;
 }
 
-h1 {
+body h1 {
   font-family: tangerine, sans-serif;
-  color: #f1e5ac;
+  font-size: 120px!important;
+  color: #fff;
   text-shadow: 0 0 7px #e2d0ab, 0 0 10px #e2d0ab, 0 0 21px #e2d0ab,
-    0 0 42px #e2d0ab, 0 0 82px #e2d0ab, 0 0 92px #e2d0ab, 0 0 102px #e2d0ab,
-    0 0 151px #e2d0ab;
+    0 0 42px #dadbdd, 0 0 82px #dadbdd, 0 0 92px #dadbdd, 0 0 102px #dadbdd,
+    0 0 151px #dadbdd;
   letter-spacing: 3px;
 }
 #title-text{
@@ -27,10 +29,11 @@ p {
   font-family: nanum gothic, sans-serif;
   margin: 5px;
   color: #281c1c;
-  font-weight: bolder;
+  font-weight: 700;
 }
 .list-group{
-  font-family: calligraffitti, sans-serif;
+  font-family: nanum gothic, sans-serif;
+  font-weight: 700; 
 }
 
 .list-group-item {
@@ -43,11 +46,15 @@ p {
 .btn {
   background-image: linear-gradient(#dadbdd, #d3af37);
   border-color: #cecece;
+  font-family: calligraffitti, sans-serif; 
 }
 
 #title-text {
-  font-weight: 700;
+  font-size: 38px;
   color: #f1e5ac;
+  text-shadow: 0 0 7px #e2d0ab, 0 0 10px #e2d0ab, 0 0 21px #e2d0ab,
+  0 0 42px #e2d0ab, 0 0 82px #e2d0ab, 0 0 92px #e2d0ab, 0 0 102px #e2d0ab,
+  0 0 151px #e2d0ab;
 }
 
 #drink-container {
@@ -55,8 +62,31 @@ p {
   border-radius: 15px;
 }
 
+#drinkimg {
+  border-radius: 5px;
+}
 #store-btn {
   margin: 5px;
   color: #fff;
+}
+
+#ingredient-list-group {
+  font-weight: 700;
+  font-size: 24px; 
+}
+
+#card-text {
+  font-weight: 700;
+  font-size: 20px;  
+}
+
+#liquor-store-container {
+  background-color: #c04000dc;
+  border-radius: 15px;
+  margin: 20px; 
+}
+
+#footer-text {
+  color: #dadbdd; 
 }
 
