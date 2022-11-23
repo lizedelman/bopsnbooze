@@ -22,7 +22,6 @@ function getApi() {
       //Populates drink title, instructions and image on webpage
       drinkTitle.textContent = data.drinks[0].strDrink;
       drinkInstructions.textContent = data.drinks[0].strInstructions;
-      //NOT WORKING:
       drinkImg.src = data.drinks[0].strDrinkThumb;
 
       //Creates an array of all the ingredients and measurements
@@ -45,31 +44,21 @@ function getApi() {
         ingredients.push(ingredientObject);
         console.log(ingredientObject);
         console.log(ingredients);
+      }
+      //Loops through the ingredients object and displays them
+      for (let i = 0; i < ingredients.length; i++) {
+        console.log(ingredients[i]);
 
-        for (let i = 0; i < ingredients.length; i++) {
-          if (i < ingredients.length) {
-            let drinkIngredients = document.createElement("li");
-            listGroup.append(drinkIngredients);
+        //TO DO: create condition for when the measurement is empty
+        if (i < ingredients.length) {
+          let drinkIngredients = document.createElement("li");
+          listGroup.append(drinkIngredients);
 
-            drinkIngredients.textContent = ingredients[i++].ingredient;
-
-            // drinkIngredients.textContent =
-            //   ingredientObject.measure + " " + ingredientObject.ingredient;
-          } else {
-            break;
-          }
-
-          // //create the li element and append it
-          //   let drinkIng1 = document.createElement("li");
-          //   listGroup.append(drinkIng1);
-          // drinkIng1.textContent =
-          //   ingredientObject.measure + " " + ingredientObject.ingredient;
+          drinkIngredients.textContent =
+            ingredients[i].measure + " " + ingredients[i].ingredient;
+        } else {
+          break;
         }
-
-        // let drinkIng1 = document.createElement("li");
-        //    test.append(drinkIng1);
-        //    drinkIng1.textContent =
-        //    data.drinks[0].strMeasure1 + data.drinks[0].strIngredient1;
       }
     });
 }
