@@ -33,6 +33,10 @@ function getApi() {
         var ingredient = drinksObject["strIngredient" + i];
         var measure = drinksObject["strMeasure" + i];
 
+        if (!measure) {
+          measure = ""
+        }
+
         if (!ingredient) {
           break;
         }
@@ -47,27 +51,26 @@ function getApi() {
       }
       //Loops through the ingredients object and displays them
       for (let i = 0; i < ingredients.length; i++) {
-        console.log(ingredients[i]);
 
         //TO DO: create condition for when the measurement is empty
         if (i < ingredients.length) {
           let drinkIngredients = document.createElement("li");
           listGroup.append(drinkIngredients);
-
           drinkIngredients.textContent =
             ingredients[i].measure + " " + ingredients[i].ingredient;
-        } else {
-          break;
         }
-      }
-    });
-}
-function clearArray() {
-  listGroup.textContent = "";
-}
 
-//Event listener for "generate drink" button
-genDrinkBtn.addEventListener("click", getApi);
+
+      }
+
+    });
+  }
+  function clearArray() {
+    listGroup.textContent = "";
+  }
+
+  //Event listener for "generate drink" button
+  genDrinkBtn.addEventListener("click", getApi);
 
 //TO DO:
 //1. Complete development of this api call
