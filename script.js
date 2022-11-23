@@ -18,6 +18,7 @@ function getApi() {
     .then(function (data) {
       console.log(data);
       console.log(data.drinks[0].strDrink);
+      clearArray();
 
       //Populates drink title, instructions and image on webpage
       drinkTitle.textContent = data.drinks[0].strDrink;
@@ -43,7 +44,6 @@ function getApi() {
 
         ingredients.push(ingredientObject);
         console.log(ingredientObject);
-        console.log(ingredients);
       }
       //Loops through the ingredients object and displays them
       for (let i = 0; i < ingredients.length; i++) {
@@ -61,6 +61,9 @@ function getApi() {
         }
       }
     });
+}
+function clearArray() {
+  listGroup.textContent = "";
 }
 
 //Event listener for "generate drink" button
