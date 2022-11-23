@@ -4,6 +4,13 @@ let drinkIng1 = document.getElementById("ingredient1");
 let listGroup = document.getElementById("ingredient-list-group");
 let genDrinkBtn = document.getElementById("gen-button");
 let drinkImg = document.getElementById("drinkimg");
+let storeBtn = document.getElementById("store-btn");
+let storeOne = document.getElementById("storeOne");
+let storeOneAdd = document.getElementById("storeOneAdd");
+let storeTwo = document.getElementById("storeTwo");
+let storeTwoAdd = document.getElementById("storeTwoAdd");
+let storeThree = document.getElementById("storeThree");
+let storeThreeAdd = document.getElementById("storeThreeAdd");
 
 function getApi() {
   //Url for drink randomizer
@@ -34,7 +41,7 @@ function getApi() {
         var measure = drinksObject["strMeasure" + i];
 
         if (!measure) {
-          measure = ""
+          measure = "";
         }
 
         if (!ingredient) {
@@ -51,41 +58,48 @@ function getApi() {
       }
       //Loops through the ingredients object and displays them
       for (let i = 0; i < ingredients.length; i++) {
-
-        //TO DO: create condition for when the measurement is empty
         if (i < ingredients.length) {
           let drinkIngredients = document.createElement("li");
           listGroup.append(drinkIngredients);
           drinkIngredients.textContent =
             ingredients[i].measure + " " + ingredients[i].ingredient;
         }
-
-
       }
-
     });
-  }
-  function clearArray() {
-    listGroup.textContent = "";
-  }
+}
+function clearArray() {
+  listGroup.textContent = "";
+}
 
-  //Event listener for "generate drink" button
-  genDrinkBtn.addEventListener("click", getApi);
+//Event listener for "generate drink" button
+genDrinkBtn.addEventListener("click", getApi);
 
-//TO DO:
-//1. Complete development of this api call
+// Denver liquor store url and beginning code - not completed
+function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
+  url =
+    "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=liqour+store&userLocation=39.7218301,-105.0118191&key=AimOsm5GJg0qraxaJi0SUUro_hogtc3-hm5gx031e7WP1To6SFT3zuZQ0Jyh7Lpu";
 
-//Denver liquor store url and beginning code - not completed
-// function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
-//   var requestOptions = {
-//     method: "GET",
-//     redirect: "follow",
-//   };
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    //Pulls the data from the cocktails DB
+    .then(function (data) {
+      console.log(data);
+      console.log(data.resourceSets[0].resources[0].name);
+      console.log(data.resourceSets[0].resources[0].Address.addressLine);
+      storeOne.textContent = data.resourceSets[0].resources[0].name;
+      storeOneAdd.textContent =
+        data.resourceSets[0].resources[0].Address.addressLine;
 
-//   fetch(
-//     "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=liqour+store&userLocation=39.7218301,-105.0118191&key=AimOsm5GJg0qraxaJi0SUUro_hogtc3-hm5gx031e7WP1To6SFT3zuZQ0Jyh7Lpu\n",
-//     requestOptions
-//   )
-//     .then((response) => response.text())
-//     .then((result) => console.log(result))
-//     .catch((error) => console.log("error", error));
+      storeTwo.textContent = data.resourceSets[0].resources[1].name;
+      storeTwoAdd.textContent =
+        data.resourceSets[0].resources[1].Address.addressLine;
+
+      storeThree.textContent = data.resourceSets[0].resources[2].name;
+      storeThreeAdd.textContent =
+        data.resourceSets[0].resources[2].Address.addressLine;
+    });
+}
+
+storeBtn.addEventListener("click", getLiquorStores);
