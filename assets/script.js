@@ -1,7 +1,7 @@
 let drinkTitle = document.getElementById("drink-name");
 let drinkInstructions = document.getElementById("card-text");
 let drinkIng1 = document.getElementById("ingredient1");
-let listGroup = document.getElementById("list-group");
+let listGroup = document.getElementById("ingredient-list-group");
 let genDrinkBtn = document.getElementById("gen-button");
 let drinkImg = document.getElementById("drinkimg");
 

@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Dinanahan's cocktailz</title>
+    <link rel="stylesheet" href="./assets/reset.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Nanum+Gothic&family=Tangerine:wght@700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Nanum+Gothic:wght@400;700;800&family=Tangerine:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
 
@@ -24,8 +24,9 @@
       background-position: center;
     "
   >
+  <!-- HEADER -->
     <div class="px-4 text-center">
-      <h1 class="display-5 pt-2" id="title">Cocktailz</h1>
+      <h1 class="pt-2" id="title">Cocktailz</h1>
       <div class="col-lg-6 mx-auto">
         <p id="title-text" class="lead mb-4">
           Feeling Lucky?<br />
@@ -43,6 +44,7 @@
       </div>
     </div>
 
+    <!-- DRINK CONTAINER-->
     <div
       class="row flex-lg-row-reverse align-items-center g-5 py-5 m-4 hide"
       id="drink-container"
@@ -58,30 +60,32 @@
           id="drinkimg"
         />
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="ingredient-container">
         <h2 id="drink-name" class="fw-bold lh-1 mb-3">Drink Name</h2>
-        <ul class="list-group list-group-flush" id="list-group"></ul>
+        <ul class="list-group list-group-flush" id="ingredient-list-group"></ul>
         <p id="card-text" class="lead">
           Quickly design and customize responsive mobile-first sites with
           Bootstrap, the world’s most popular front-end open source toolkit,
           featuring Sass variables and mixins, responsive grid system, extensive
           prebuilt components, and powerful JavaScript plugins.
         </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button
-            type="button"
-            class="btn btn-primary btn-lg px-4 me-md-2"
-            id="store-btn"
-          >
-            Primary
-          </button>
-        </div>
       </div>
     </div>
-
+    <br>
+    <div class="d-grid gap-5 d-md-flex justify-content-md-center">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg px-5 me-md-2"
+        id="store-btn"
+      >
+        Find a Liquor Store!
+      </button>
+    </div>
     <br />
-    <div class="card">
-      <ol class="list-group list-group-numbered">
+
+    <!-- LIQUOR STORES CONTAINER -->
+    <div class="card m-4" id="liquor-store-container">
+      <ol class="list-group list-group-numbered" id="liquor-store-list">
         <li
           class="list-group-item d-flex justify-content-between align-items-start"
         >
@@ -89,7 +93,6 @@
             <div class="fw-bold">Subheading</div>
             Content for list item
           </div>
-          <span class="badge bg-primary rounded-pill">14</span>
         </li>
         <li
           class="list-group-item d-flex justify-content-between align-items-start"
@@ -98,7 +101,6 @@
             <div class="fw-bold">Subheading</div>
             Content for list item
           </div>
-          <span class="badge bg-primary rounded-pill">14</span>
         </li>
         <li
           class="list-group-item d-flex justify-content-between align-items-start"
@@ -107,10 +109,15 @@
             <div class="fw-bold">Subheading</div>
             Content for list item
           </div>
-          <span class="badge bg-primary rounded-pill">14</span>
         </li>
       </ol>
     </div>
+
+    <footer>
+      <div class="text-center p-4" id="footer-text">
+        © 2022 Copyright: Team Dinanahan
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
