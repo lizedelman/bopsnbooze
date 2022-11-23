@@ -27,6 +27,12 @@ function getApi() {
       console.log(data.drinks[0].strDrink);
       clearArray();
 
+      let drinkContainer = document.getElementById("drink-container");
+      drinkContainer.classList.remove("hide");
+
+      let liquorStoreBtn = document.getElementById("store-btn");
+      liquorStoreBtn.classList.remove("hide");
+
       //Populates drink title, instructions and image on webpage
       drinkTitle.textContent = data.drinks[0].strDrink;
       drinkInstructions.textContent = data.drinks[0].strInstructions;
@@ -88,6 +94,10 @@ function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
       console.log(data);
       console.log(data.resourceSets[0].resources[0].name);
       console.log(data.resourceSets[0].resources[0].Address.addressLine);
+
+      let liquorStoreContainer = document.getElementById("liquor-store-container");
+      liquorStoreContainer.classList.remove("hide");
+
       storeOne.textContent = data.resourceSets[0].resources[0].name;
       storeOneAdd.textContent =
         data.resourceSets[0].resources[0].Address.addressLine;
