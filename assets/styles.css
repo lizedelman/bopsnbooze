@@ -1,3 +1,4 @@
+/* GENERAL BODY STYLING */
 body {
   background-image: url(./photos/bar-back.jpeg);
   background-repeat: no-repeat;
@@ -14,9 +15,6 @@ body h1 {
     0 0 151px #dadbdd;
   letter-spacing: 3px;
 }
-#title-text{
-  font-family: calligraffitti, sans-serif;
-}
 
 h2 {
   font-family: calligraffitti, sans-serif;
@@ -31,6 +29,9 @@ p {
   color: #281c1c;
   font-weight: 700;
 }
+
+/* CLASS CSS STYLING */
+
 .list-group{
   font-family: nanum gothic, sans-serif;
   font-weight: 700; 
@@ -46,16 +47,27 @@ p {
 .btn {
   background-image: linear-gradient(#dadbdd, #d3af37);
   border-color: #cecece;
-  font-family: calligraffitti, sans-serif; 
+  font-family: calligraffitti, sans-serif;   
+  margin: 5px;
+  color: #fff;
 }
 
+.hide {
+  display: none;
+}
+
+/* TITLE SYLING */
+
 #title-text {
+  font-family: calligraffitti, sans-serif;
   font-size: 38px;
   color: #f1e5ac;
   text-shadow: 0 0 7px #e2d0ab, 0 0 10px #e2d0ab, 0 0 21px #e2d0ab,
   0 0 42px #e2d0ab, 0 0 82px #e2d0ab, 0 0 92px #e2d0ab, 0 0 102px #e2d0ab,
   0 0 151px #e2d0ab;
 }
+
+/* DRINK CARD SYLING */
 
 #drink-container {
   background-color: #c04000dc;
@@ -64,10 +76,6 @@ p {
 
 #drinkimg {
   border-radius: 5px;
-}
-#store-btn {
-  margin: 5px;
-  color: #fff;
 }
 
 #ingredient-list-group {
@@ -80,17 +88,17 @@ p {
   font-size: 20px;  
 }
 
+/* LIQUOR STORE SYLING */
+
 #liquor-store-container {
   background-color: #c04000dc;
   border-radius: 15px;
   margin: 20px; 
 }
 
+/* FOOTER SYLING */
+
 #footer-text {
   color: #dadbdd; 
 }
 
-.hide {
-  display: none;
-  
-}
