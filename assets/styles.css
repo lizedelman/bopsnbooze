@@ -1,0 +1,104 @@
+/* GENERAL BODY STYLING */
+body {
+  background-image: url(./photos/bar-back.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed, scroll;
+  background-size: cover;
+}
+
+body h1 {
+  font-family: tangerine, sans-serif;
+  font-size: 120px!important;
+  color: #fff;
+  text-shadow: 0 0 7px #e2d0ab, 0 0 10px #e2d0ab, 0 0 21px #e2d0ab,
+    0 0 42px #dadbdd, 0 0 82px #dadbdd, 0 0 92px #dadbdd, 0 0 102px #dadbdd,
+    0 0 151px #dadbdd;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-family: calligraffitti, sans-serif;
+  font-size: 28pt;
+  color: #281c1c;
+  text-shadow: 0 0 5px #482029;
+}
+
+p {
+  font-family: nanum gothic, sans-serif;
+  margin: 5px;
+  color: #281c1c;
+  font-weight: 700;
+}
+
+/* CLASS CSS STYLING */
+
+.list-group{
+  font-family: nanum gothic, sans-serif;
+  font-weight: 700; 
+}
+
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0);
+  color: #281c1c;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.btn {
+  background-image: linear-gradient(#dadbdd, #d3af37);
+  border-color: #cecece;
+  font-family: calligraffitti, sans-serif;   
+  margin: 5px;
+  color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+/* TITLE SYLING */
+
+#title-text {
+  font-family: calligraffitti, sans-serif;
+  font-size: 38px;
+  color: #f1e5ac;
+  text-shadow: 0 0 7px #e2d0ab, 0 0 10px #e2d0ab, 0 0 21px #e2d0ab,
+  0 0 42px #e2d0ab, 0 0 82px #e2d0ab, 0 0 92px #e2d0ab, 0 0 102px #e2d0ab,
+  0 0 151px #e2d0ab;
+}
+
+/* DRINK CARD SYLING */
+
+#drink-container {
+  background-color: #c04000dc;
+  border-radius: 15px;
+}
+
+#drinkimg {
+  border-radius: 5px;
+}
+
+#ingredient-list-group {
+  font-weight: 700;
+  font-size: 24px; 
+}
+
+#card-text {
+  font-weight: 700;
+  font-size: 20px;  
+}
+
+/* LIQUOR STORE SYLING */
+
+#liquor-store-container {
+  background-color: #c04000dc;
+  border-radius: 15px;
+  margin: 20px; 
+}
+
+/* FOOTER SYLING */
+
+#footer-text {
+  color: #dadbdd; 
+}
+
