@@ -34,7 +34,9 @@ function getApi() {
       liquorStoreBtn.classList.remove("hide");
 
       //Populates drink title, instructions and image on webpage
-      drinkTitle.textContent = data.drinks[0].strDrink;
+      let drinkName = data.drinks[0].strDrink
+      drinkTitle.textContent = drinkName; 
+      saveDrinkArray(drinkName); 
       drinkInstructions.textContent = data.drinks[0].strInstructions;
       drinkImg.src = data.drinks[0].strDrinkThumb;
 
@@ -73,8 +75,23 @@ function getApi() {
       }
     });
 }
+
 function clearArray() {
   listGroup.textContent = "";
+}
+
+// Saves drink name to array in local storage
+function saveDrinkArray(drinkName) {
+  let recentDrinks = localStorage.getItem('recentDrinks'); 
+  if (recentDrinks) {
+      recentDrinks = JSON.parse(recentDrinks); 
+      recentDrinks.push(drinkName); 
+      recentDrinks = JSON.stringify(recentDrinks); 
+      localStorage.setItem('recentDrinks', recentDrinks); 
+  } else {
+      recentDrinks = JSON.stringify([drinkName]); 
+      localStorage.setItem('recentDrinks', recentDrinks);
+  }
 }
 
 //Event listener for "generate drink" button
