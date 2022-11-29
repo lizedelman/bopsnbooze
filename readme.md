@@ -15,6 +15,10 @@ Once the user lands on the application, the user must click on the on the genera
 
 <img src ="./assets/photos/cocktailzscreenshot.png" alt = "fancy bar">
 
+## Deployed Page
+
+https://lizedelman.github.io/bopsnbooze/
+
 ## Credits
 
 Basic page styling: https://getbootstrap.com/
