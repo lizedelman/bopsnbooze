@@ -87,6 +87,22 @@
     </div>
     <br />
 
+    <!-- PREVIOUS DRINKS BUTTON-->
+    <div class="d-grid gap-5 d-md-flex justify-content-md-center">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg px-5 me-md-2 hide"
+        id="previous-drinks-btn"
+      >
+        Previously Generated Drinks
+      </button>
+    </div>
+
+    <!-- PREVIOUS DRINKS CONTAINER-->
+    <div class="card m-4 hide" id="previous-drinks-container">
+      <ul class="list-group list-group-flush p-4" id="previous-drink-list"></ul>
+    </div>
+
     <!-- LIQUOR STORES CONTAINER -->
     <div class="card m-4 hide" id="liquor-store-container">
       <ol class="list-group list-group-numbered" id="liquor-store-list">
@@ -95,7 +111,7 @@
         >
           <div class="ms-2 me-auto">
             <div class="fw-bold" id="storeOne">Liquor store name</div>
-            <div id="storeOneAdd">Liqour store address</div>
+            <div id="storeOneAdd">Liquor store address</div>
           </div>
         </li>
         <li
