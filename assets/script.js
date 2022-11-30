@@ -4,6 +4,10 @@ let drinkIng1 = document.getElementById("ingredient1");
 let listGroup = document.getElementById("ingredient-list-group");
 let genDrinkBtn = document.getElementById("gen-button");
 let drinkImg = document.getElementById("drinkimg");
+let previousDrinkList = document.getElementById('previous-drink-list'); 
+let previousDrinksCont = document.getElementById("previous-drinks-container");
+// let previousDrinksRow = document.getElementById('previous-drink-row'); 
+let previousDrinksBtn = document.getElementById('previous-drinks-btn'); 
 let storeBtn = document.getElementById("store-btn");
 let storeOne = document.getElementById("storeOne");
 let storeOneAdd = document.getElementById("storeOneAdd");
@@ -33,8 +37,13 @@ function getApi() {
       let liquorStoreBtn = document.getElementById("store-btn");
       liquorStoreBtn.classList.remove("hide");
 
+      let previousDrinksBtn = document.getElementById("previous-drinks-btn");
+      previousDrinksBtn.classList.remove("hide");
+
       //Populates drink title, instructions and image on webpage
-      drinkTitle.textContent = data.drinks[0].strDrink;
+      let drinkName = data.drinks[0].strDrink
+      drinkTitle.textContent = drinkName; 
+      saveDrinkArray(drinkName); 
       drinkInstructions.textContent = data.drinks[0].strInstructions;
       drinkImg.src = data.drinks[0].strDrinkThumb;
 
@@ -73,12 +82,59 @@ function getApi() {
       }
     });
 }
+
 function clearArray() {
   listGroup.textContent = "";
 }
 
+
+// Saves drink name to array in local storage
+function saveDrinkArray(drinkName) {
+  let recentDrinks = localStorage.getItem('recentDrinks'); 
+  if (recentDrinks) {
+      recentDrinks = JSON.parse(recentDrinks); 
+      recentDrinks.push(drinkName); 
+      recentDrinks = JSON.stringify(recentDrinks); 
+      localStorage.setItem('recentDrinks', recentDrinks); 
+  } else {
+      recentDrinks = JSON.stringify([drinkName]); 
+      localStorage.setItem('recentDrinks', recentDrinks);
+  }
+}
+
+// Function to render previously generated drinks
+function renderPreviousDrinks() {
+  console.log('clicked'); 
+  previousDrinksCont.classList.remove('hide'); 
+
+  let recentDrinks = localStorage.getItem('recentDrinks'); 
+  
+  if (recentDrinks) {
+    let drinksArray = JSON.parse(recentDrinks); 
+    console.log(drinksArray); 
+    for (let i = 0; i < drinksArray.length; i++) {
+      if (i < drinksArray.length) {
+        let drinkName = drinksArray[i]; 
+        let previousDrinks = document.createElement("li");
+        previousDrinks.setAttribute('class', 'list-group-item'); 
+        previousDrinkList.append(previousDrinks);
+        previousDrinks.textContent =
+          `${drinkName}`;
+      }
+
+    }
+
+  }
+
+}
+
+//Event listener for "previous drinks" button
+previousDrinksBtn.addEventListener("click", renderPreviousDrinks);
+
 //Event listener for "generate drink" button
 genDrinkBtn.addEventListener("click", getApi);
+
+
 
 // Denver liquor store url and beginning code - not completed
 function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
