@@ -151,6 +151,14 @@ function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
       console.log(data.resourceSets[0].resources[0].name);
       console.log(data.resourceSets[0].resources[0].Address.addressLine);
 
+      console.log(data.resourceSets[0].resources[1].name);
+      console.log(data.resourceSets[0].resources[1].Address.addressLine);
+
+      console.log(data.resourceSets[0].resources[2].name);
+      console.log(data.resourceSets[0].resources[2].Address.addressLine);
+
+      
+
       let liquorStoreContainer = document.getElementById("liquor-store-container");
       liquorStoreContainer.classList.remove("hide");
 
