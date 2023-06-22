@@ -136,10 +136,11 @@ genDrinkBtn.addEventListener("click", getApi);
 
 
 
-// Denver liquor store url and beginning code - not completed
-function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
+function getLiquorStores() {
+
+
   url =
-    "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=liqour+store&userLocation=39.7218301,-105.0118191&key=AimOsm5GJg0qraxaJi0SUUro_hogtc3-hm5gx031e7WP1To6SFT3zuZQ0Jyh7Lpu";
+    `https://dev.virtualearth.net/REST/v1/LocalSearch/?query=liqour+store&locality=&key=AimOsm5GJg0qraxaJi0SUUro_hogtc3-hm5gx031e7WP1To6SFT3zuZQ0Jyh7Lpu`;
 
   fetch(url)
     .then(function (response) {
@@ -150,6 +151,14 @@ function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
       console.log(data);
       console.log(data.resourceSets[0].resources[0].name);
       console.log(data.resourceSets[0].resources[0].Address.addressLine);
+
+      console.log(data.resourceSets[0].resources[1].name);
+      console.log(data.resourceSets[0].resources[1].Address.addressLine);
+
+      console.log(data.resourceSets[0].resources[2].name);
+      console.log(data.resourceSets[0].resources[2].Address.addressLine);
+
+      
 
       let liquorStoreContainer = document.getElementById("liquor-store-container");
       liquorStoreContainer.classList.remove("hide");
@@ -166,6 +175,8 @@ function getLiquorStores(long = 39.7218301, lat = -105.0118191) {
       storeThreeAdd.textContent =
         data.resourceSets[0].resources[2].Address.addressLine;
     });
-}
+
+  }
 
 storeBtn.addEventListener("click", getLiquorStores);
+
