@@ -135,7 +135,7 @@ previousDrinksBtn.addEventListener("click", renderPreviousDrinks);
 genDrinkBtn.addEventListener("click", getApi);
 
 
-
+// Grabs the location of the locality of the user, then displays the top 3 nearest liquor stoers in that city
 function getLiquorStores() {
 
 
@@ -146,7 +146,7 @@ function getLiquorStores() {
     .then(function (response) {
       return response.json();
     })
-    //Pulls the data from the cocktails DB
+    //Pulls the data from the cocktails DB logs the 3 liquor store in the console
     .then(function (data) {
       console.log(data);
       console.log(data.resourceSets[0].resources[0].name);
